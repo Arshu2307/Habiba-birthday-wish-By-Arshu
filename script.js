@@ -98,19 +98,66 @@ const msgText = "ðŸ’– Happiest Birthday to the most special person of my life ðŸ
       };
       typeChar();
 
-      // Fireworks
-      if (typeof startFireworks === "function") {
-        startFireworks();
-      }
-    }, 700);
-  });
+      // Fireworks animation
+function startFireworks() {
+  const canvas = document.getElementById("fireworks");
+  if (!canvas) return;
+  const ctx = canvas.getContext("2d");
 
-  // Canvas resize (if fireworks used)
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+
+  let particles = [];
+
+  function random(min, max) {
+    return Math.random() * (max - min) + min;
+  }
+
+  function createFirework() {
+    const x = random(100, canvas.width - 100);
+    const y = random(50, canvas.height / 2);
+    const count = 80; // jitna bada dhamaka chahiye utne particles
+    for (let i = 0; i < count; i++) {
+      particles.push({
+        x: x,
+        y: y,
+        dx: random(-4, 4),
+        dy: random(-4, 4),
+        life: 100,
+        color: `hsl(${random(0, 360)}, 100%, 60%)`
+      });
+    }
+  }
+
+  function draw() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    particles.forEach((p, i) => {
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, 2, 0, Math.PI * 2);
+      ctx.fillStyle = p.color;
+      ctx.fill();
+
+      p.x += p.dx;
+      p.y += p.dy;
+      p.life--;
+
+      if (p.life <= 0) particles.splice(i, 1);
+    });
+
+    requestAnimationFrame(draw);
+  }
+
+  // har 800ms me ek naya cracker
+  setInterval(createFirework, 800);
+  draw();
+}
+
+// Canvas resize (if fireworks used)
   window.addEventListener("resize", () => {
     const canvas = document.getElementById("fireworks");
     if (canvas) {
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
     }
-  });
 });
