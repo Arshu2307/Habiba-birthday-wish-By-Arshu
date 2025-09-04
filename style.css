@@ -91,7 +91,7 @@ button:hover {
   margin: 20px auto;
   font-size: 1.2rem;
   line-height: 1.6;
-  color:white;
+  color: white;
   text-shadow: 0 0 10px #0f0, 0 0 20px lime;
   white-space: pre-wrap;   /* ✅ Line break respect karega */
   word-wrap: break-word;   /* ✅ Word wrapping handle karega */
