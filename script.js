@@ -79,7 +79,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
      // Typewriter effect
 const msgText = "💖 Happiest Birthday to the most special person of my life 🎂✨. May your life be as beautiful as your smile and as magical as your soul. You deserve all the love, happiness, and success in the world 🌸💫. Thank you for making my world brighter in the beginning and sorry for not being that Arshu whom you want. Well...❤️. Today is all about you—so shine like the star you are ⭐🎉!";
-      let msgEl = document.getElementById("personalMsg");
+     let msgEl = document.getElementById("personalMsg");
       if (!msgEl) {
         msgEl = document.createElement("p");
         msgEl.id = "personalMsg";
@@ -98,20 +98,19 @@ const msgText = "💖 Happiest Birthday to the most special person of my life �
       };
       typeChar();
 
-       // Fireworks
+      // Fireworks
       if (typeof startFireworks === "function") {
         startFireworks();
       }
     }, 700);
   });
   
-}
-
-// Canvas resize (if fireworks used)
+  // Canvas resize (if fireworks used)
   window.addEventListener("resize", () => {
     const canvas = document.getElementById("fireworks");
     if (canvas) {
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
     }
+  });
 });
