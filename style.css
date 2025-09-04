@@ -62,18 +62,6 @@ button:hover {
   animation: flicker 1.5s infinite;
 }
 
-
-#wishImage {
-  width: 250px;        /* square banane ke liye fixed width */
-  height: 250px;       /* square banane ke liye fixed height */
-  object-fit: cover;   /* image crop hoke square fit ho jaayegi */
-  border-radius: 20px; /* thoda round corner */
-  box-shadow: 0 0 20px #0f0; /* neon glow (optional) */
-  display: block;
-  margin: 20px auto;   /* center me show hoga */
-}
-
-
 /* ✅ Verified text center aur neon cyan */
 .verified {
   display: block;
@@ -81,6 +69,15 @@ button:hover {
   color: cyan;
   text-shadow: 0 0 10px cyan, 0 0 20px #0ff;
   font-size: 1.5rem;
+}
+#wishImage {
+  max-width: 200px;   /* image ki maximum width fix kar do */
+  width: 80%;         /* screen ke according responsive */
+  height: auto;       /* proportion maintain rahega */
+  border-radius: 15px; /* thoda rounded corner aur stylish look */
+  box-shadow: 0 0 20px #0f0; /* neon glow (optional) */
+  margin: 20px auto;  /* center aur spacing */
+  display: block;
 }
 
 @keyframes flicker {
@@ -97,10 +94,11 @@ button:hover {
   pointer-events: none;
 }
 
+
 #personalMsg {
   max-width: 80%;
   margin: 20px auto;
-  fnt-size: 1.2rem;
+  font-size: 1.2rem;
   line-height: 1.6;
   color:#ffffff;
   text-shadow: 0 0 10px #0f0, 0 0 20px lime;
