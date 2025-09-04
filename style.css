@@ -62,6 +62,18 @@ button:hover {
   animation: flicker 1.5s infinite;
 }
 
+
+#wishImage {
+  max-width: 300px;   /* image ki maximum width fix kar do */
+  width: 80%;         /* screen ke according responsive */
+  height: auto;       /* proportion maintain rahega */
+  border-radius: 15px; /* thoda rounded corner aur stylish look */
+  box-shadow: 0 0 20px #0f0; /* neon glow (optional) */
+  margin: 20px auto;  /* center aur spacing */
+  display: block;
+}
+
+
 /* ✅ Verified text center aur neon cyan */
 .verified {
   display: block;
