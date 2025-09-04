@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🎂 Birthday Surprise</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="app">
+    <!-- Step 1: Warning -->
+    <button id="warningBtn">⚠️ Warning! Don't Click</button>
+    <p id="warningText" class="hidden">Type <b>I'm ready</b> to continue</p>
+    <input type="text" id="readyInput" class="hidden" placeholder="Type here...">
+    <!-- ✅ New Submit Button -->
+    <button id="verifyBtn" class="hidden">Verify</button>
+
+    <!-- Step 2: Favorite Question -->
+    <div id="favQuestion" class="hidden">
+      <p>Are you Arshu's favorite person?</p>
+      <button id="noBtn" disabled>No</button>
+      <button id="yesBtn">Yes</button>
+    </div>
+
+    <!-- Step 3: Gift Box -->
+    <div id="giftSection" class="hidden">
+      <div id="giftBox">🎁</div>
+      <p>Click the gift to open!</p>
+    </div>
+
+    <!-- Step 4: Final Wish -->
+    <div id="finalWish" class="hidden">
+      <!-- Yahan tum image add karna chaahte ho -->
+      <img src="your-image.jpg" alt="Photo" id="wishImage">
+
+      <!-- ✅ Verified text ab image ke niche -->
+      <h2 class="verified cyber-text">✅ Verified</h2>
+
+     <!-- Personal Message -->
+<p id="personalMsg" class="hidden typewriter">
+ 💖 "Happiest Birthday to the most special person of my life 🎂✨. May your life be as beautiful as your smile and as magical as your soul. You deserve all the love, happiness, and success in the world 🌸💫. Thank you for making my world brighter in the beginning and sorry for not being that Arshu whom you want . Well...❤️. Today is all about you—so shine like the star you are ⭐🎉!"
+</p>
+      <h1 class="cyber-text">🎉 Happy Birthday To My Dear Habiba Ji<br>
+      (Golu Molu) <br>🤭</h1>
+      <canvas id="fireworks"></canvas>
+    </div>
+
+    <!-- Song -->
+    <audio id="birthdaySong" src="happy birthday song.mp3"></audio>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,133 @@
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: black;
+  color: #0f0;
+  font-family: 'Courier New', monospace;
+  text-align: center;
+  overflow: hidden;
+}
+
+button {
+  padding: 12px 24px;
+  margin: 10px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 18px;
+  background: #111;
+  color: #0f0;
+  border: 2px solid #0f0;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background: #0f0;
+  color: black;
+}
+
+.hidden {
+  display: none;
+}
+
+/* ✅ Verify Button special style (green neon) */
+#verifyBtn {
+  background: #111;
+  color: #0f0;
+  border: 2px solid #0f0;
+}
+#verifyBtn:hover {
+  background: #0f0;
+  color: black;
+}
+
+#giftBox {
+  font-size: 100px;
+  cursor: pointer;
+  transition: transform 0.5s;
+}
+
+#giftBox.opened {
+  transform: scale(0);
+  opacity: 0;
+}
+
+.cyber-text {
+  font-size: 2.5rem;
+  color: #0f0;
+  text-shadow: 0 0 10px #0f0, 0 0 20px lime;
+  animation: flicker 1.5s infinite;
+}
+
+/* ✅ Verified text center aur neon cyan */
+.verified {
+  display: block;
+  margin: 15px auto;
+  color: cyan;
+  text-shadow: 0 0 10px cyan, 0 0 20px #0ff;
+  font-size: 1.5rem;
+}
+
+@keyframes flicker {
+  0%, 18%, 22%, 25%, 53%, 57%, 100% {opacity: 1;}
+  20%, 24%, 55% {opacity: 0.3;}
+}
+
+#fireworks {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+
+#personalMsg {
+  max-width: 80%;
+  margin: 20px auto;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: #0f0;
+  text-shadow: 0 0 10px #0f0, 0 0 20px lime;
+  white-space: pre-wrap;   /* ✅ Line break respect karega */
+  word-wrap: break-word;   /* ✅ Word wrapping handle karega */
+}
+
+
+
+/* ✅ Typewriter animation for personal message */
+.typewriter {
+  display: inline-block;
+  font-size: 1.2rem;
+  color: #0f0;
+  text-shadow: 0 0 10px #0f0;
+  border-right: 2px solid #0f0;
+  white-space: pre-line;     /* ✅ multi-line allow */
+  word-wrap: break-word;     /* ✅ long words break */
+  max-width: 80%;            /* ✅ screen ke andar rahe */
+  margin: 20px auto;
+  overflow: hidden;
+  animation: typing 4s steps(40, end), blink 0.7s step-end infinite;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink {
+  from, to { border-color: transparent }
+  50% { border-color: #0f0; }
+}
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blink {
+  50% { border-color: transparent; }
+}
