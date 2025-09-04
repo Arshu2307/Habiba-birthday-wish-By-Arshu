@@ -98,55 +98,8 @@ const msgText = "ðŸ’– Happiest Birthday to the most special person of my life ðŸ
       };
       typeChar();
 
-     // Fireworks effect
-const canvas = document.getElementById("fireworks");
-const ctx = canvas.getContext("2d");
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
+     
 
-let particles = [];
-
-function random(min, max) {
-  return Math.random() * (max - min) + min;
 }
-
-function createFirework(x, y) {
-  let count = 100;
-  while (count--) {
-    particles.push({
-      x: x,
-      y: y,
-      angle: random(0, Math.PI * 2),
-      speed: random(2, 6),
-      radius: 2,
-      alpha: 1,
-    });
-  }
-}
-
-function renderFireworks() {
-  ctx.fillStyle = "rgba(0,0,0,0.2)";
-  ctx.fillRect(0, 0, canvas.width, canvas.height);
-  particles.forEach((p, i) => {
-    const vx = Math.cos(p.angle) * p.speed;
-    const vy = Math.sin(p.angle) * p.speed;
-    p.x += vx;
-    p.y += vy;
-    p.alpha -= 0.01;
-    if (p.alpha <= 0) {
-      particles.splice(i, 1);
-    }
-    ctx.beginPath();
-    ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
-    ctx.fillStyle = `rgba(255,255,0,${p.alpha})`;
-    ctx.fill();
-  });
-  requestAnimationFrame(renderFireworks);
-}
-
-function startFireworks() {
-  setInterval(() => {
-    createFirework(random(0, canvas.width), random(0, canvas.height / 2));
-  }, 800);
-  renderFireworks();
-}
+               });
+});
